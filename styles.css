@@ -1,0 +1,597 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Authentication Section */
+.auth-section {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #667eea;
+    font-size: 2.5em;
+}
+
+.auth-toggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.auth-toggle button {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    background: white;
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.auth-toggle button.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.auth-toggle button:hover {
+    border-color: #667eea;
+}
+
+.auth-form {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.auth-form.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.auth-form button {
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.auth-form button:active {
+    transform: translateY(0);
+}
+
+/* Dashboard */
+.dashboard {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.5s ease;
+}
+
+.dashboard.hidden {
+    display: none;
+}
+
+.auth-section.hidden {
+    display: none;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dashboard .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.dashboard .header h1 {
+    color: #333;
+    font-size: 2em;
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.card h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* Account Overview */
+.account-overview {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.account-overview h2 {
+    color: white;
+}
+
+.balance-display {
+    margin-bottom: 20px;
+}
+
+.balance-display p {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.balance-display h3 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.account-info p {
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-btn {
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.action-btn:last-child {
+    margin-bottom: 0;
+}
+
+.action-btn:hover {
+    background: #5568d3;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.action-btn:active {
+    transform: translateX(3px);
+}
+
+/* Transaction History */
+.transaction-history {
+    grid-column: 1 / -1;
+}
+
+.transaction-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.transaction-item {
+    padding: 15px;
+    background: white;
+    border-left: 4px solid #667eea;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.transaction-item:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-type {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.transaction-date {
+    font-size: 0.85em;
+    color: #999;
+}
+
+.transaction-amount {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.transaction-amount.deposit {
+    color: #51cf66;
+}
+
+.transaction-amount.withdrawal {
+    color: #ff6b6b;
+}
+
+.transaction-amount.transfer {
+    color: #4dabf7;
+}
+
+.no-transactions {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/* Interest Section */
+.interest-section p {
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+.interest-section span {
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.alert-content {
+    text-align: center;
+}
+
+.alert-content p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content input {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.modal-content button,
+#alertOkBtn {
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:hover,
+#alertOkBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.modal-content button:active,
+#alertOkBtn:active {
+    transform: translateY(0);
+}
+
+.danger-btn {
+    background: #ff6b6b !important;
+    margin-top: 15px;
+}
+
+.danger-btn:hover {
+    background: #ff5252 !important;
+}
+
+.settings-content {
+    padding: 10px 0;
+}
+
+.settings-content h3 {
+    color: #333;
+    margin: 20px 0 15px 0;
+    font-size: 1.1em;
+}
+
+.settings-content p {
+    margin: 10px 0;
+}
+
+.settings-content hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 2px solid #e9ecef;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5568d3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard .header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .dashboard .header h1 {
+        font-size: 1.5em;
+    }
+
+    .logout-btn {
+        align-self: flex-end;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-overview {
+        grid-column: 1;
+    }
+
+    .transaction-history {
+        grid-column: 1;
+    }
+
+    .balance-display h3 {
+        font-size: 2em;
+    }
+
+    .auth-section {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-amount {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .auth-section h1 {
+        font-size: 1.8em;
+    }
+
+    .dashboard .header h1 {
+        font-size: 1.3em;
+    }
+
+    .balance-display h3 {
+        font-size: 1.8em;
+    }
+
+    .dashboard-grid {
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .action-btn {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+
+    .auth-form input,
+    .modal-content input {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
