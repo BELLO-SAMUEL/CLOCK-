@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+    
+.btn{
+    
+    display: flex;
+    align-items: center;
+    
+    Justify-content: center;
+    
+}
+button{
+    font-size: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background: grey;
+    padding: 10px;
+    border: none;
+    borderline: none;
+    Justify-content: center;
+}
+*{
+    margin: 5px 5px 5px 5px;
+}
+    table {
+        width: 100%;
+        max-width: 800px;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 600; /* Gives the font a slightly bolder look */
+        color: #000000;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    th, td {
+        border: 2px solid #e0e0e0;
+        padding: 10px;
+        vertical-align: middle;
+    }
+
+    th {
+        font-weight: 900;
+        padding: 20px 15px;
+    }
+
+    /* Adjusts line height for the stacked dates */
+    td:first-child {
+        line-height: 1.4;
+    }
+</style>
+</head>
+<body>
+    <div id="examTable">
+        <br><br>
+<h2 style="text-align: center">CONFLUENCE UNIVERSITY OF SCIENCE AND TECHNOLOGY, OSARA</h2>
+<h4 style="text-align: center">SECOND SEMESTER  100 LEVEL CYBER SECURITY EXAMINATION TIME TABLE</h4>
+<H4 style="text-align: center">2025/2026 ACADEMIC SESSION</H4>
+<table>
+    <thead>
+        <tr>
+            <th>Date/Day</th>
+            <th>Course</th>
+            <th>Time</th>
+            <th>Venue</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Thursday<br>09/07/2026</td>
+            <td>PHY141</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td>Monday<br>13/07/2026</td>
+            <td>GST142</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td>Tuesday<br>14/07/2026</td>
+            <td>MTH141</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td>Thursday<br>16/07/2026</td>
+            <td>GST141</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td>Friday<br>17/07/2026</td>
+            <td>SWE142</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td>Saturday<br>18/07/2026</td>
+            <td>CSC141</td>
+            <td>1:50 PM – 3:50 PM</td>
+            <td>LR5</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Tuesday<br>21/07/2026</td>
+            <td>PHY143</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td rowspan="2">LR5</td>            
+        </tr>
+        <tr>
+            <td>CSC142</td>
+            <td>1:50 PM – 3:50 PM</td>       
+        </tr>
+        <tr>
+            <td>Wednesday<br>22/07/2026</td>
+            <td>STA141</td>
+            <td>8:00 AM – 10:00 AM</td>
+            <td>LR5</td>
+        </tr>
+    </tbody>
+    
+</table>
+<p style="font-size: 6px; text-align: center">SAMMY-TECH  &copy; 2026</p>
+   <br><br> 
+   
+</div>
+<marquee>
+    <h2>I Wish You All GoodLuck And Success Although </h2>
+</marquee>
+<div class="btn">
+<button onclick="downloadTable()">Download Table</button>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+function downloadTable() {
+    const table = document.getElementById("examTable");
+
+    html2canvas(table).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "Exam_Time_Table.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
+}
+</script>
+</body>
+</html>
